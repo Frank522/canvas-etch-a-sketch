@@ -14,7 +14,7 @@ const ctx = canvas.getContext('2d');
 window.addEventListener('load', () => {
 
   //Resizing
-  canvas.height = (window.innerHeight * 2) / 3;
+  canvas.height = window.innerHeight / 2;
   canvas.width = (window.innerWidth * 2) / 3;
 
   // ctx.strokeStyle = 'red';
@@ -43,12 +43,15 @@ window.addEventListener('load', () => {
   }
 
   function draw(e) {
+    
     if(!painting) return;
+
+    console.log(e);
 
     ctx.lineWidth = 10;
     ctx.lineCap = 'round';
 
-    ctx.lineTo(e.layerX, e.layerY);
+    ctx.lineTo(e.offsetX, e.offsetY);
     ctx.stroke();
   }
 

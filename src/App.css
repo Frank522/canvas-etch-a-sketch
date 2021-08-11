@@ -2,6 +2,7 @@
   text-align: center;
 }
 
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -27,6 +28,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -36,6 +38,8 @@ canvas {
   margin: 30px;
   background-color: white;
   border: black solid 2px;
-  width: 60vw;
-  height: 60vw;
+}
+
+.settings {
+  
 }

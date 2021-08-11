@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Canvas from './canvas';
+import Canvas from './Components/Canvas';
+import Settings from './Components/Settings';
 
 class App extends Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class App extends Component {
       <div className="App-body">
         <h1>Canvas</h1>
         <Canvas/>
+        <Settings/>
       </div>
     );
   }
