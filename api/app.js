@@ -1,4 +1,4 @@
-require('custom-env').env(true)
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -11,6 +11,13 @@ var usersRouter = require('./routes/users');
 var testAPIRouter = require("./routes/testAPI");
 
 var app = express();
+
+//Set up mongoose connection
+var mongoose = require('mongoose');
+var mongoDB = 'mongodb+srv://mfrank21199:ujXDCUgLClA6QVDc@cluster0.yojw8.mongodb.net/canvas-draw-app-dev?retryWrites=true&w=majority';
+mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

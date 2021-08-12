@@ -2,8 +2,8 @@ var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 
-var ImageSchema = newSchema({
+var ImageSchema = new Schema({
     url: { type: String },
 });
 
-module.exports = mongoose.model('History', HistorySchema);
+module.exports = mongoose.model('Image', ImageSchema);
