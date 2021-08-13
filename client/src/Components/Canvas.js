@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
 
-class Canvas extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render(){
-        return <canvas id="canvas"></canvas>
-    }
+const Canvas = (props) => {
+    return <canvas id="canvas"></canvas>
 }
 
 export default Canvas;

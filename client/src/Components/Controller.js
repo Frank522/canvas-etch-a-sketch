@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 
-class Controller extends Component {
-    render() {
-        return <input type="button" value="reset" id="resetBtn"/>;
-    }
-}
+const Controller = () => {
+  return (
+    <div>
+      <input type="button" value="reset" id="resetBtn" />
+      <input type="button" value="undo" id="undoBtn" />
+      <input type="button" value="redo" id="redoBtn" />
+    </div>
+  );
+};
 
-export default Controller
+export default Controller;

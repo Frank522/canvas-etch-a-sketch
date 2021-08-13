@@ -1,36 +1,35 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import './App.css';
 import Canvas from './Components/Canvas';
 import Controller from './Components/Controller';
 import Settings from './Components/Settings';
+import DrawingHistory from './Modules/DrawingHistory';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { apiResponse: '' };
-  }
+const App = () => {
 
-  callAPI() {
+  const [apiResponse, setApiResponse] = useState('');
+
+  const callAPI = () => {
     fetch('http://localhost:9000/testAPI')
       .then((res) => res.text())
-      .then((res) => this.setState({ apiResponse: res }));
+      .then((res) => setApiResponse(res));
   }
 
-  componentWillMount() {
-    this.callAPI();
-  }
+  useEffect(() => {
+    callAPI();
+    
+  }, [apiResponse]);
 
-  render() {
-    return (
-      <div className="App-body">
-        <p className="App-intro">{this.state.apiResponse}</p>
-        <h1>Canvas</h1>
-        <Canvas />
-        <Settings />
-        <Controller />
-      </div>
-    );
-  }
+  return (
+    <div className="App-body">
+      <p className="App-intro">{apiResponse}</p>
+      <h1>Canvas</h1>
+      <Canvas />
+      <Settings />
+      <Controller />
+    </div>
+  );
+
 }
 
 export default App;
